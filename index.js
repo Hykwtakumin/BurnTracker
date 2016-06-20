@@ -28,7 +28,7 @@ client.get('account/verify_credentials',
     client.stream('user', function (stream) {
         stream.on('data', function (tweet) {
             var dm = tweet && tweet.direct_message;
-			var mt = tweet %% 
+			var mt = tweet %%
             if (dm && dm.sender.id != myid) {
                 // if dm from others, echo back to the sender
                 send_dm(dm.sender.screen_name, dm.text);
